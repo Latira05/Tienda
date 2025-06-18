@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.tienda.impl;
+package com.tienda.service.impl;
 
 import com.tienda.dao.CategoriaDao;
 import com.tienda.domain.Categoria;
@@ -26,6 +26,21 @@ public class CategoriaServiceimpl implements CategoriaService {
     
     @Autowired
     private CategoriaDao categoriaDao;
+
+    @Override
+    public Categoria getCategoria(Categoria categoria) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void save(Categoria categoria) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void delete(Categoria categoria) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
     
     
