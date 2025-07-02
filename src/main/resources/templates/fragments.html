@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:replace="${titulo} ?: 'Practica1'"></title>
+    <link rel="stylesheet" href="/css/estilos.css">
+</head>
+<body>
+    
+    
+    <header th:fragment="head">
+        <h1>🌳 Gestión de Árboles</h1>
+        <nav>
+            <a href="/arboles">Inicio</a> |
+            <a href="/arboles/nuevo">Agregar Árbol</a>
+        </nav>
+        <hr>
+    </header>
+    
+         <footer th:fragment="footer">
+        <hr>
+        <p style="text-align: center;">&copy; 2025 practica1.</p>
+    </footer>
+
+    
+    
+    
+</html>

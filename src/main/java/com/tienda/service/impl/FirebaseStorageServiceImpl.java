@@ -12,6 +12,7 @@ import com.google.cloud.storage.BlobInfo;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.Storage.SignUrlOption;
 import com.google.cloud.storage.StorageOptions;
+import com.google.storage.v2.BucketName;
 import com.tienda.service.FirebaseStorageService;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -26,6 +27,9 @@ import org.springframework.web.multipart.MultipartFile;
 
 @Service
 public class FirebaseStorageServiceImpl implements FirebaseStorageService {
+
+    private String BucketName;
+    private String archivoJsonFile;
     @Override
     public String cargaImagen(MultipartFile archivoLocalCliente, String carpeta, Long id) {
         try {

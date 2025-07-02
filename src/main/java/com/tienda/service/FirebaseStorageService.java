@@ -15,7 +15,7 @@ public interface FirebaseStorageService {
     
     
     ////////////////////////////////////////////////////////
-    final String BucketName = “techshop-92.appspot.com";
+    //final String BucketName = “techshop-92.appspot.com";
     ////////////////////////////////////////////////////////
     ///
     ///
@@ -28,7 +28,7 @@ public interface FirebaseStorageService {
     //El nombre del archivo Json
     
     //////////////////////////////////////////////////////////
-    final String archivoJsonFile = “techshop-92cb9-firebase-adminsdk-fbsvc-c71fc9c700.Json";
+    //final String archivoJsonFile = “techshop-92cb9-firebase-adminsdk-fbsvc-c71fc9c700.Json";
     /////////////////////////////////////////////////////////
 }
 
