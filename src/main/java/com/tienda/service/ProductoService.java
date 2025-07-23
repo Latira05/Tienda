@@ -25,5 +25,7 @@ public interface ProductoService {
     public void save(Producto producto);
     
     // Se elimina el categoria que tiene el id pasado por parámetro
-    public void delete(Producto producto);             
+    public void delete(Producto producto);          
+    
+      public List<Producto> metodoJPQL(double precioInf, double precioSup);
 }

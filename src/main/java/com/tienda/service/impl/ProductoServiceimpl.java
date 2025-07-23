@@ -7,7 +7,7 @@ package com.tienda.service.impl;
 import com.tienda.dao.ProductoDao;
 import com.tienda.domain.Producto;
 import com.tienda.service.ProductoService;
-import jakarta.transaction.Transactional;
+import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,7 +30,7 @@ public class ProductoServiceimpl implements ProductoService {
     private ProductoDao productoDao;
 
     @Override
-    @Transactional //(readOnly = true)
+    @Transactional (readOnly = true)
     public Producto getProducto(Producto producto) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
@@ -46,6 +46,12 @@ public class ProductoServiceimpl implements ProductoService {
     public void delete(Producto producto) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+
+    @Override
+    public List<Producto> metodoJPQL(double precioInf, double precioSup) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+    
     
     
     

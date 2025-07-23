@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Productos Caros</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h1>Productos con precio mayor a 500 colones</h1>
+    <p>hello world, try this one</p>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Descripción</th>
+                <th>Precio</th>
+                <th>Existencias</th>
+                <th>Categoría</th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr th:each="producto : ${productos}">
+                <td th:text="${producto.idProducto}"></td>
+                <td th:text="${producto.descripcion}"></td>
+                <td th:text="${producto.precio}"></td>
+                <td th:text="${producto.existencias}"></td>
+                <td th:text="${producto.categoria.nombre}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
