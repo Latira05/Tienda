@@ -29,35 +29,36 @@ public class ProjectConfig {
  }
 
 @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http
-                .authorizeHttpRequests((request) -> request
-                .requestMatchers("/", "/index", "/errores/**", "/error",
-                        "/carrito/**", "/pruebas/**", "/reportes/**",
-                        "/registro/**", "/js/**", "/webjars/**")
-                .permitAll()
-                .requestMatchers(
-                        "/producto/nuevo", "/producto/guardar",
-                        "/producto/modificar/**", "/producto/eliminar/**",
-                        "/categoria/nuevo", "/categoria/guardar",
-                        "/categoria/modificar/**", "/categoria/eliminar/**",
-                        "/usuario/nuevo", "/usuario/guardar",
-                        "/usuario/modificar/**", "/usuario/eliminar/**",
-                        "/reportes/**"
-                ).hasRole("ADMIN")
-                .requestMatchers(
-                        "/producto/listado",
-                        "/categoria/listado",
-                        "/usuario/listado"
-                ).hasRole("VENDEDOR")
-                .requestMatchers("/facturar/carrito")
-                .hasRole("USER")
-                )
-                .formLogin((form) -> form
-                .loginPage("/login").permitAll())
-                .logout((logout) -> logout.permitAll());
-        return http.build();
-    }
+
+public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+	http
+			.authorizeHttpRequests((request) -> request
+			.requestMatchers("/", "/index", "/errores/**",
+					"/carrito/**", "/reportes/**",
+					"/registro/**", "/js/**", "/webjars/**", "/error", "/refrescarBoton")
+			.permitAll()
+			.requestMatchers(
+					"/producto/nuevo", "/producto/guardar",
+					"/producto/modificar/**", "/producto/eliminar/**",
+					"/categoria/nuevo", "/categoria/guardar",
+					"/categoria/modificar/**", "/categoria/eliminar/**",
+					"/usuario/nuevo", "/usuario/guardar",
+					"/usuario/modificar/**", "/usuario/eliminar/**",
+					"/reportes/**", "/pruebas/**"
+			).hasRole("ADMIN")
+			.requestMatchers(
+					"/producto/listado",
+					"/categoria/listado",
+					"/usuario/listado"
+			).hasAnyRole("ADMIN", "VENDEDOR")
+			.requestMatchers("/facturar/carrito")
+			.hasRole("USER")
+			)
+			.formLogin((form) -> form
+			.loginPage("/login").permitAll())
+			.logout((logout) -> logout.permitAll());
+	return http.build();
+}
 
 /* El siguiente método se utiliza para completar la clase no es 
     realmente funcional, la próxima semana se reemplaza con usuarios de BD */    
@@ -80,4 +81,6 @@ public class ProjectConfig {
                 .build();
         return new InMemoryUserDetailsManager(user, sales, admin);
     }
+    
+    
 }
