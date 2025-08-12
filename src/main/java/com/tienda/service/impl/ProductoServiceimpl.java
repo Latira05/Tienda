@@ -52,7 +52,16 @@ public class ProductoServiceimpl implements ProductoService {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
-    
+    @Override
+@Transactional(readOnly=true)
+public List<Producto> findByPrecioBetweenOrderByDescripcion(double precioInf, double precioSup) {
+  return productoDao.findByPrecioBetweenOrderByDescripcion(precioInf, precioSup);
+}
+
+    @Override
+    public List<Producto> metodoNativo(double precioInf, double precioSup) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
     
 }
